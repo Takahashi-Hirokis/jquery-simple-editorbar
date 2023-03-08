@@ -1,0 +1,377 @@
+/**
+ * jQuery simple-EditorBar plugin
+ *
+ */
+
+.tool-bar {
+  display: flex;
+  flex-direction: column;
+  min-width: 70px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.tool-bar-btn {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.tool-bar-btn button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: none;
+  padding: unset;
+}
+
+.tool-bar-btn button:hover,
+.tool-bar-btn label:hover {
+  opacity: 0.5;
+}
+
+.tool-bar-btn button:active,
+.tool-bar-btn label:hover {
+  opacity: 0.3;
+}
+
+.tool-bar-btn i {
+  font-style: normal;
+}
+
+.tool-bar-btn .font-size i {
+  display: block;
+  position: relative;
+}
+
+.tool-bar-btn .font-size i::before {
+  display: block;
+  width: 36px;
+  content: 'T';
+  position: absolute;
+  top: -12px;
+  font-size: 21px;
+}
+
+.tool-bar-btn .font-color i {
+  display: block;
+  width: 9px;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  left: 14px;
+  background: currentColor;
+  border-radius: 3px;
+  box-shadow: -2px 8px 0 0, 2px 8px 0 0;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .font-color i::before {
+  display: block;
+  width: 2px;
+  height: 14px;
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 1px;
+  background: currentColor;
+  border-radius: 3px;
+  box-sizing: border-box;
+  transform: rotate(25deg);
+}
+
+.tool-bar-btn .font-color i::after {
+  display: block;
+  width: 2px;
+  height: 14px;
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 1px;
+  background: currentColor;
+  border-radius: 3px;
+  box-sizing: border-box;
+  transform: rotate(-25deg);
+}
+
+.tool-bar-btn .background-color i {
+  display: block;
+  width: 6px;
+  height: 10px;
+  margin-top: -18px;
+  position: relative;
+  top: 6px;
+  left: 14px;
+  border: 2px solid;
+  border-bottom: 0;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .background-color i::before {
+  display: block;
+  width: 14px;
+  height: 16px;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -4px;
+  border: 2px solid;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.tool-bar-btn .background-color i::after {
+  display: block;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: -12px;
+  background: currentColor;
+  border-radius: 0 100% 100% 100%;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.tool-bar-btn .font-weight i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: relative;
+  top: -2px;
+  left: 14px;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.tool-bar-btn .font-weight i::after {
+  display: block;
+  width: 10px;
+  height: 8px;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -2px;
+  border: 2px solid;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .strike-through i {
+  display: block;
+  position: relative;
+}
+
+.tool-bar-btn .strike-through i::before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  content: "";
+  width: 20px;
+  border-top: 2px solid;
+}
+
+.tool-bar-btn .align-left i {
+  display: block;
+  width: 14px;
+  height: 2px;
+  position: relative;
+  left: 16px;
+  background: currentColor;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .align-left i::before {
+  display: block;
+  width: 2px;
+  height: 12px;
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  border-left: 2px solid;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .align-left i::after {
+  display: block;
+  width: 8px;
+  height: 8px;
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.tool-bar-btn .align-center i {
+  display: block;
+  width: 23px;
+  height: 2px;
+  position: relative;
+  left: 8px;
+  border-left: 9px solid;
+  border-right: 9px solid;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .align-center i::before {
+  display: block;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -5px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.tool-bar-btn .align-center i::after {
+  display: block;
+  width: 6px;
+  height: 6px;
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+}
+
+.tool-bar-btn .hyper-link i {
+  display: block;
+  width: 8px;
+  height: 2px;
+  position: relative;
+  left: 15px;
+  background: currentColor;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+}
+
+.tool-bar-btn .hyper-link i::before {
+  display: block;
+  width: 8px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  border: 2px solid;
+  border-right: 0;
+  border-radius: 3px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .hyper-link i::after {
+  display: block;
+  width: 8px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  border: 2px solid;
+  border-left: 0;
+  border-radius: 3px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-sizing: border-box;
+}
+
+.tool-bar-btn .font-size-select {
+  border: none;
+  width: 36px;
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  z-index: 1;
+  outline: none;
+  background: none;
+}
+
+.tool-bar-btn .font-color-input,
+.tool-bar-btn .bg-color-input {
+  border: none;
+  background: none;
+  width: 23px;
+  height: 29px;
+}
+
+.tool-bar-btn .drop-down {
+  display: none;
+}
+
+.tool-bar-btn .dd-label  {
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.tool-bar-btn .dd-label::after {
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.tool-bar-btn .dd-bar {
+  display: none;
+}
+
+.tool-bar-btn .drop-down:checked ~ .dd-bar {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 5px;
+  place-items: center;
+  width: 360px;
+  height: 25px;
+  padding: 5px;
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  position: absolute;
+  left: 95%;
+  background: #fff;
+  box-shadow:  2px 5px 15px 0px #ddd;
+}
+
+.tool-bar-btn .link-input {
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
