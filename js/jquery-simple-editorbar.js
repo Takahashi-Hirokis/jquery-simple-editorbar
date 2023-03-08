@@ -1,7 +1,7 @@
 /**
  * jQuery simple-EditorBar plugin
  *
- * This is Simple Multi Tool Bar for ContentEditable-Html in jQuery
+ * This is a Simple Multi Tool Bar for ContentEditable-HTML in jQuery
  *
  * @author Hiroki Takahahsi
  * @requires jQuery version 1.7.1 or later
