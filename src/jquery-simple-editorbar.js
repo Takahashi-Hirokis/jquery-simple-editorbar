@@ -3,7 +3,7 @@
  *
  * This is a Simple Multi Tool Bar for ContentEditable-HTML in jQuery
  *
- * @author Hiroki Takahai
+ * @author Hiroki Takahashi
  * @requires jQuery version 1.7.1 or later
  *
  */
