@@ -38,7 +38,7 @@ $.fn.toolbar = function (options) {
 			attr   : options.fontSize.attr  || null,
 			style  : options.fontSize.style ||
 			function () {
-				return `font-size: ${this.input}`;
+				return `font-size: ${this.input}px`;
 			},
 		},
 
