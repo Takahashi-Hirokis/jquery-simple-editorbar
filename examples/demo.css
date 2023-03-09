@@ -1,0 +1,16 @@
+#wrapper {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+  margin: 40px auto;
+}
+
+#content-editable {
+  width: 400px;
+  padding: 4px;
+  border: 1px solid #ccc;
+}
+
+#tool-bar-container {
+  width: 70px;
+}
